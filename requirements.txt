@@ -1,0 +1,5 @@
+numpy==1.26.4
+streamlit==1.32.0
+plotly==5.19.0
+wordcloud==1.9.2
+graphviz==0.20.3
