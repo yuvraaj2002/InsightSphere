@@ -1,6 +1,7 @@
 import streamlit as st
 import pickle
 import numpy as np
+import pandas as pd
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 
@@ -38,10 +39,43 @@ def load_reduced_data():
         return None
 
 
+
+@st.cache_resource
+def load_df():
+    try:
+        df = pd.read_csv("artifacts/data.csv")
+        return df
+    except FileNotFoundError:
+        print("Error: File not found.")
+        return None
+    except Exception as e:
+        print("An error occurred:", e)
+        return None
+
+
+
 def dataset_desc():
-    Overview_col, Visualization_col = st.columns(spec=(1.2, 1), gap="large")
+    Overview_col, Visualization_col = st.columns(spec=(1.3, 1), gap="large")
     with Overview_col:
-        st.title("Customer Segmentation dataset")
+        st.markdown(
+            "<h1 style='text-align: left; font-size: 50px; '>Customer Segmentation dataset</h1>",
+            unsafe_allow_html=True,
+        )
+
+        st.markdown(
+            "<p style='font-size: 20px; text-align: left;'>Customer segmentation is the practice of dividing a customer base into groups of individuals that are similar in specific ways relevant to marketing, such as age, gender, interests and spending habits.</p>",
+            unsafe_allow_html=True,
+        )
+        st.markdown(
+            "<p style='font-size: 20px; text-align: left;'>Companies employing customer segmentation operate under the fact that every customer is different and that their marketing efforts would be better served if they target specific, smaller groups with messages that those consumers would find relevant and lead them to buy something. Companies also hope to gain a deeper understanding of their customers' preferences and needs with the idea of discovering what each segment finds most valuable to more accurately tailor marketing materials toward that segment..</p>",
+            unsafe_allow_html=True,
+        )
+        st.write("***")
+
+        df = load_df()
+        st.dataframe(df.tail(10))
+
+
 
     with Visualization_col:
         reduced_data = load_reduced_data()
