@@ -15,7 +15,7 @@ st.markdown(
     """
         <style>
                .block-container {
-                    padding-top: 3rem;
+                    padding-top: 2rem;
                     padding-bottom: 0rem;
                     # padding-left: 2rem;
                     # padding-right:2rem;
@@ -48,17 +48,21 @@ def main_page():
         )
         st.write("")
         st.markdown(
-            "<p style='font-size: 22px; text-align: left;'>The AI-Powered Home Finder is a state-of-the-art tool that transforms the way Gurgaon residents look for their ideal homes by utilizing the strength of sophisticated AI algorithms. Prospective homeowners can take advantage of several advantages provided by this cutting-edge technology, which smoothly streamlines the house-hunting process and provides customized recommendations based on each individual's preferences and needs.There are three separate modules included in this application.</p>",
+            "<p style='font-size: 22px; text-align: left;'>Customer segmentation is crucial for businesses aiming to boost marketing efficiency and customer satisfaction. By categorizing customers based on demographics, interests, and purchasing behavior, companies tailor marketing messages to engage each segment effectively.</p>",
             unsafe_allow_html=True,
         )
-        st.write("")
+        st.markdown(
+            "<p style='font-size: 22px; text-align: left;'>Our app employs advanced clustering algorithms like KMeans, DBSCAN, and AGNES to extract insights from your customer data. Whether you're a marketer targeting specific segments or a strategist refining product offerings, our tool facilitates informed decision-making.Our application have 3 modules ⬇️</p>",
+            unsafe_allow_html=True,
+        )
+
         st.markdown(
             """
             <div>
                 <ul>
-                    <li><p style='font-size: 22px; text-align: left;'><em>The Price Prediction Module:</em> Empowered by your input preferences, this module delivers precise estimations of property values, ensuring informed decision-making.</p></li>
-                    <li><p style='font-size: 22px; text-align: left;'><em>The Recommendation Engine:</em> Unlocking a realm of personalized suggestions, this engine utilizes advanced algorithms to match your preferences with the perfect property fit.</p></li>
-                    <li><p style='font-size: 22px; text-align: left;'><em>The Loan Eligibility Module:</em> Seamlessly integrated, this module provides insights into your eligibility for loans, facilitating smooth financial planning.</p></li>
+                    <li><p style='font-size: 22px; text-align: left;'><em>Dataset Overview:</em> Gain a comprehensive understanding of your customer dataset's structure and variables.Explore key insights into customer demographics, interests, and spending habits at a glance.</p></li>
+                    <li><p style='font-size: 22px; text-align: left;'><em>Clustering performance analysis:</em> Evaluate the effectiveness of different clustering algorithms (KMeans, DBSCAN, AGNES) in segmenting your customer data.Compare performance metrics such as silhouette score and cluster stability to determine the most suitable algorithm for your specific dataset.</p></li>
+                    <li><p style='font-size: 22px; text-align: left;'><em>Individual Cluster Summary:</em> Dive deep into each segmented cluster to uncover unique traits and behaviors.Explore demographic profiles, purchasing patterns, and preferences of customers within each cluster for targeted marketing strategies.</p></li>
                 </ul>
             </div>
         """,
