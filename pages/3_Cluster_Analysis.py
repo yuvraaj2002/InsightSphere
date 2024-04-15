@@ -156,7 +156,7 @@ def cluster_analysis():
 
     with analysis_col:
         st.markdown(
-            "<h1 style='text-align: left; font-size: 45px; '>Clusters Analysis</h1>",
+            "<h1 style='text-align: left; font-size: 45px; '>Clusters Analysis🔎</h1>",
             unsafe_allow_html=True,
         )
         st.markdown(
