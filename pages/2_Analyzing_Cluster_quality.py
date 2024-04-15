@@ -181,7 +181,7 @@ def performance_analysis():
     Visualization_col,description_col = st.columns(spec=(1.5, 1), gap="large")
     with Visualization_col:
         st.markdown(
-            "<h1 style='text-align: left; font-size: 50px; '>Performance Analysis</h1>",
+            "<h1 style='text-align: left; font-size: 50px; '>Performance Analysis📊</h1>",
             unsafe_allow_html=True,
         )
         st.markdown(
