@@ -2,8 +2,6 @@
 
 
 <a name="readme-top"></a>
-Customer segmentation is crucial for businesses aiming to boost marketing efficiency and customer satisfaction. By categorizing customers based on demographics, interests, and purchasing behavior, companies tailor marketing messages to engage each segment effectively.Our app employs advanced clustering algorithms like KMeans, DBSCAN, and AGNES to extract insights from your customer data. Whether you're a marketer targeting specific segments or a strategist refining product offerings, our tool facilitates informed decision-making
-
 <!-- PROJECT LOGO -->
 ![image](https://github.com/yuvraaj2002/InsightSphere/assets/123289647/399fb14a-b5b6-467d-ab2d-e3cb36ac8215)
 LIVE PROJECT LINK ➡️ https://greenguardai-re3tsfre3ufpu9sk96bjjd.streamlit.app/
@@ -32,7 +30,7 @@ LIVE PROJECT LINK ➡️ https://greenguardai-re3tsfre3ufpu9sk96bjjd.streamlit.a
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-GreenGuard is an innovative image classification project designed to revolutionize agriculture by providing farmers with an automated solution for the early detection of plant diseases. With the aim of mitigating crop losses and optimizing agricultural practices, GreenGuard leverages a convolutional neural network to identify and classify diseased plants into three different categories: healthy, prone to disease, and diseased.
+Customer segmentation is crucial for businesses aiming to boost marketing efficiency and customer satisfaction. By categorizing customers based on demographics, interests, and purchasing behavior, companies tailor marketing messages to engage each segment effectively. Our app employs advanced clustering algorithms like KMeans, DBSCAN, and AGNES to extract insights from your customer data. Whether you're a marketer targeting specific segments or a strategist refining product offerings, our tool facilitates informed decision-making. Our application consists of three modules: Dataset Overview, allowing you to gain a comprehensive understanding of your customer dataset's structure and variables; Clustering Performance Analysis, enabling you to evaluate the effectiveness of different clustering algorithms and compare performance metrics; and Individual Cluster Summary, where you can dive deep into each segmented cluster to uncover unique traits and behaviors for targeted marketing strategies.
 
 
 
@@ -40,7 +38,7 @@ GreenGuard is an innovative image classification project designed to revolutioni
 To build this project, I've started by outlining the programming languages that form its foundation, followed by an in-depth exploration of the libraries incorporated. This deliberate documentation not only promotes transparency but also serves as a comprehensive reference to the technologies leveraged throughout the development journey. 
 
 - Programming Language : Python
-- Libraries: Tensorflow, keras, PIL, Pandas, Numpy, Matplotlib, Plotly, Streamlit
+- Libraries: Pandas, Numpy, Seaborn, Plotly, Matplotlib, Pickle, Plotly.graph_objects, Plotly.subplots, Plotly.express, StandardScaler, MinMaxScaler, KNNImputer, TSNE, Plotly.graph_objects, Plotly.subplots, KMeans, DBSCAN, Axes3D, silhouette_score, OPTICS, matplotlib.colors, colorsys, scipy.cluster.hierarchy, AgglomerativeClustering.
 
 
 
