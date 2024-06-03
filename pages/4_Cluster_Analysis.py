@@ -107,6 +107,7 @@ def load_kmeans_clst():
 
 
 
+
 @st.cache_resource
 def load_ss_data():
     try:
@@ -247,7 +248,6 @@ def cluster_analysis():
         Cluster 8 consists of the youngest individuals, with an average age of approximately 20 years. They have a relatively low amount of work experience, averaging around 2.97 years. Despite their age, they exhibit a moderate approach to spending, with an average spending score of around 0.08. The family size for this cluster is typically around 4 members. Cluster 8 can be characterized as comprising young individuals who prioritize saving and financial planning from a young age.
         """
         download_summary(summary_text)
-
 
 
 cluster_analysis()
