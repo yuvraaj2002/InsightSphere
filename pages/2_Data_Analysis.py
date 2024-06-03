@@ -38,6 +38,12 @@ def load_dataframe():
 
 def plot_pie_charts(df):
 
+    st.title("Univraiate Analysis")
+    st.markdown(
+        "<p style='font-size: 20px; text-align: left;'>In clustering algorithms like K-means, determining the number of clusters beforehand is crucial, unlike in density or hierarchical clustering methods. To address this, we employ two techniques: the Elbow Method and the Silhouette Method.The Elbow Method is a graphical approach where we plot the within-cluster sum of squares (WCSS) against the number of clusters. The point where the rate of decrease sharply changes represents a suitable value for k.On the other hand, the Silhouette Method calculates the silhouette score for each data point, measuring how similar it is to its own cluster compared to other clusters. This method provides a concise graphical representation of how well each data point lies within its cluster.</p>",
+        unsafe_allow_html=True,
+    )
+
     # Create subplot grid
     fig = ps.make_subplots(rows=1, cols=5,
                            specs=[[{'type': 'domain'}, {'type': 'domain'}, {'type': 'domain'}, {'type': 'domain'},{'type': 'domain'}]])
@@ -75,49 +81,53 @@ def plot_pie_charts(df):
 
     # Update layout for elegance
     fig.update_layout(
-        title='Pie Charts for Gender, Ever Married, Graduated or not, Spending Score',
+        title='',
         height=400,
         width=800,
         showlegend=False,
         legend=dict(x=0.05, y=0.95)
     )
-    st.title("Univariate Analysis")
     st.plotly_chart(fig, use_container_width=True)
 
 
 def Finding_answers(df):
+    st.title("MultiVariate Analysis")
+    st.markdown(
+        "<p style='font-size: 20px; text-align: left;'>In clustering algorithms like K-means, determining the number of clusters beforehand is crucial, unlike in density or hierarchical clustering methods. To address this, we employ two techniques: the Elbow Method and the Silhouette Method.The Elbow Method is a graphical approach where we plot the within-cluster sum of squares (WCSS) against the number of clusters. The point where the rate of decrease sharply changes represents a suitable value for k.On the other hand, the Silhouette Method calculates the silhouette score for each data point, measuring how similar it is to its own cluster compared to other clusters. This method provides a concise graphical representation of how well each data point lies within its cluster.</p>",
+        unsafe_allow_html=True,
+    )
 
     col1, col2 = st.columns(spec=(1,1), gap="large")
     with col1:
         # Question 1: Is there a significant difference in the likelihood of being ever married between males and females?
         with st.expander(
-                "Question 1: Is there a significant difference in the likelihood of being ever married between males and females?"):
+                "Question 1: Is there a significant difference in the likelihood of being ever married between males and females?",expanded=True):
             fig = px.bar(df, x='Gender', y='Ever_Married', color='Gender', title='Ever Married by Gender',
                          labels={'Ever_Married': 'Ever Married Status'})
             st.plotly_chart(fig)
 
         # Question 2: How does the age distribution differ between males and females?
-        with st.expander("Question 2: How does the age distribution differ between males and females?"):
+        with st.expander("Question 2: How does the age distribution differ between males and females?",expanded=True):
             fig = px.histogram(df, x='Age', color='Gender', title='Age Distribution by Gender',
                                labels={'Age': 'Age', 'count': 'Frequency'})
             st.plotly_chart(fig)
 
         # Question 3: Are certain professions more likely to have individuals who are graduated compared to others?
         with st.expander(
-                "Question 3: Are certain professions more likely to have individuals who are graduated compared to others?"):
+                "Question 3: Are certain professions more likely to have individuals who are graduated compared to others?",expanded=True):
             fig = px.bar(df, x='Profession', y='Graduated', color='Profession', title='Graduation Status by Profession',
                          labels={'Graduated': 'Graduated Status'})
             st.plotly_chart(fig)
 
         # Question 4: Is there a typical progression of work experience with age, and does it vary across genders?
         with st.expander(
-                "Question 4: Is there a typical progression of work experience with age, and does it vary across genders?"):
+                "Question 4: Is there a typical progression of work experience with age, and does it vary across genders?",expanded=True):
             fig = px.scatter(df, x='Age', y='Work_Experience', color='Gender', title='Work Experience by Age',
                              labels={'Age': 'Age', 'Work_Experience': 'Work Experience'})
             st.plotly_chart(fig)
 
         # Question 5: Do males and females have different spending scores on average?
-        with st.expander("Question 5: Do males and females have different spending scores on average?"):
+        with st.expander("Question 5: Do males and females have different spending scores on average?",expanded=True):
             fig = px.box(df, x='Gender', y='Spending_Score', color='Gender', title='Spending Score by Gender',
                          labels={'Spending_Score': 'Spending Score'})
             st.plotly_chart(fig)
@@ -125,21 +135,21 @@ def Finding_answers(df):
     with col2:
         # Question 6: Is there a difference in family size between individuals who are ever married and those who are not?
         with st.expander(
-                "Question 6: Is there a difference in family size between individuals who are ever married and those who are not?"):
+                "Question 6: Is there a difference in family size between individuals who are ever married and those who are not?",expanded=True):
             fig = px.box(df, x='Ever_Married', y='Family_Size', color='Ever_Married',
                          title='Family Size by Ever Married Status',
                          labels={'Family_Size': 'Family Size'})
             st.plotly_chart(fig)
 
         # Question 7: Which profession tends to have more or less work experience on average?
-        with st.expander("Question 7: Which profession tends to have more or less work experience on average?"):
+        with st.expander("Question 7: Which profession tends to have more or less work experience on average?",expanded=True):
             fig = px.bar(df, x='Profession', y='Work_Experience', color='Profession',
                          title='Work Experience by Profession',
                          labels={'Work_Experience': 'Work Experience'})
             st.plotly_chart(fig)
 
         # Question 8: Is there any correlation between age and spending score?
-        with st.expander("Question 8: Is there any correlation between age and spending score?"):
+        with st.expander("Question 8: Is there any correlation between age and spending score?",expanded=True):
             fig = px.scatter(df, x='Age', y='Spending_Score', trendline='ols',
                              title='Correlation between Age and Spending Score',
                              labels={'Age': 'Age', 'Spending_Score': 'Spending Score'})
@@ -147,13 +157,13 @@ def Finding_answers(df):
 
         # Question 9: Are certain professions more likely to have individuals who are graduated compared to others?
         with st.expander(
-                "Question 9: Are certain professions more likely to have individuals who are graduated compared to others?"):
+                "Question 9: Are certain professions more likely to have individuals who are graduated compared to others?",expanded=True):
             fig = px.bar(df, x='Profession', y='Graduated', color='Profession', title='Graduated Status by Profession',
                          labels={'Graduated': 'Graduated Status'})
             st.plotly_chart(fig)
 
         # Question 10: How does the age distribution vary between males and females?
-        with st.expander("Question 10: How does the age distribution vary between males and females?"):
+        with st.expander("Question 10: How does the age distribution vary between males and females?",expanded=True):
             fig = px.histogram(df, x='Age', color='Gender', title='Age Distribution by Gender',
                                labels={'Age': 'Age', 'count': 'Frequency'}, marginal='violin')
             st.plotly_chart(fig)
@@ -171,18 +181,76 @@ def cluster_analysis_visualization():
     with col2:
         st.image('artifacts/Silhoutte_method.png')
 
+
+def display_basic_details(df):
+    st.markdown(
+        "<p style='font-size: 20px; text-align: left;'>In clustering algorithms like K-means, determining the number of clusters beforehand is crucial, unlike in density or hierarchical clustering methods. To address this, we employ two techniques: the Elbow Method and the Silhouette Method.The Elbow Method is a graphical approach where we plot the within-cluster sum of squares (WCSS) against the number of clusters. The point where the rate of decrease sharply changes represents a suitable value for k.On the other hand, the Silhouette Method calculates the silhouette score for each data point, measuring how similar it is to its own cluster compared to other clusters. This method provides a concise graphical representation of how well each data point lies within its cluster.</p>",
+        unsafe_allow_html=True,
+    )
+
+    col1, col2,col3 = st.columns(spec=(1, 1, 1), gap="large")
+    with col1:
+        st.markdown(
+            """
+            <div style='background-color: #FBE0B4; padding:1rem;'>
+                <ul>
+                    <h5> Dimensionality Information </h5>
+                    <li>Total Number of data points in the dataset</li>
+                    <li>Total number of features in our dataset</li>
+                </ul>
+            </div>
+            """,
+            unsafe_allow_html=True
+        )
+    with col2:
+        st.markdown(
+            """
+            <div style='background-color: #FBE0B4; padding:1rem;'>
+                <ul>
+                    <h5> Dimensionality Information </h5>
+                    <li>Total Number of data points in the dataset</li>
+                    <li>Total number of features in our dataset</li>
+                </ul>
+            </div>
+            """,
+            unsafe_allow_html=True
+        )
+    with col3:
+        st.markdown(
+            """
+            <div style='background-color: #FBE0B4; padding:1rem;'>
+                <ul>
+                    <h5> Dimensionality Information </h5>
+                    <li>Total Number of data points in the dataset</li>
+                    <li>Total number of features in our dataset</li>
+                </ul>
+            </div>
+            """,
+            unsafe_allow_html=True
+        )
+
+
+
+
 def visualizations():
-    st.title("Introductory Information")
 
+    # Calling the functions for loading the dataset and also the basic details
     df = load_dataframe()
-    plot_pie_charts(df)
+    st.title("Introductory Information")
+    display_basic_details(df)
+    st.write("***")
 
-    st.title("MultiVariate Analysis")
-    st.write("adsfasd ad fsadfs adsf ")
+    # Calling function to plot charts for the univariate analysis
+    plot_pie_charts(df)
+    st.write("***")
+
+
     Finding_answers(df)
+    st.write("***")
 
     st.title("Analysis for Clustering")
     cluster_analysis_visualization()
+    st.write("***")
 
 
 visualizations()
