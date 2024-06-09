@@ -4,7 +4,7 @@
 <a name="readme-top"></a>
 <!-- PROJECT LOGO -->
 ![image](https://github.com/yuvraaj2002/InsightSphere/assets/123289647/399fb14a-b5b6-467d-ab2d-e3cb36ac8215)
-LIVE PROJECT LINK ➡️ https://greenguardai-re3tsfre3ufpu9sk96bjjd.streamlit.app/
+LIVE PROJECT LINK ➡️ https://bit.ly/3yU4ZfO
 
 <!-- TABLE OF CONTENTS -->
 <details>
