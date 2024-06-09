@@ -33,6 +33,7 @@ st.markdown(
 @st.cache_resource
 def load_dataframe():
     df = pd.read_csv('artifacts/data.csv')
+    df.drop(['Unnamed: 0'],axis=1,inplace=True)
     return df
 
 
@@ -188,20 +189,9 @@ def display_basic_details(df):
         unsafe_allow_html=True,
     )
 
-    col1, col2,col3 = st.columns(spec=(1, 1, 1), gap="large")
+    col1, col2= st.columns(spec=(1, 1), gap="small")
     with col1:
-        st.markdown(
-            """
-            <div style='background-color: #FBE0B4; padding:1rem;'>
-                <ul>
-                    <h5> Dimensionality Information </h5>
-                    <li>Total Number of data points in the dataset</li>
-                    <li>Total number of features in our dataset</li>
-                </ul>
-            </div>
-            """,
-            unsafe_allow_html=True
-        )
+        pass
     with col2:
         st.markdown(
             """
@@ -210,24 +200,31 @@ def display_basic_details(df):
                     <h5> Dimensionality Information </h5>
                     <li>Total Number of data points in the dataset</li>
                     <li>Total number of features in our dataset</li>
+                    <li>There are 4 Nominal features and 1 Ordinal categorical feature</li>
+                    <li>There is only single discrete numerical variable</li>
+                     <li>In Total there are 2019 duplicate values</li>
+                    <li>4 Features have less than 5% Nan values, 1 variable have more than 5% </li>
                 </ul>
             </div>
             """,
             unsafe_allow_html=True
         )
-    with col3:
-        st.markdown(
-            """
-            <div style='background-color: #FBE0B4; padding:1rem;'>
-                <ul>
-                    <h5> Dimensionality Information </h5>
-                    <li>Total Number of data points in the dataset</li>
-                    <li>Total number of features in our dataset</li>
-                </ul>
-            </div>
-            """,
-            unsafe_allow_html=True
-        )
+        st.write("")
+        with st.expander("Adjust dataframe configuration",expanded=True):
+            genre = st.radio(
+                label="Choose an option",
+                options=["Show Top 10 Rows", "Show Bottom 10 Rows", "Show Random 10 Rows"],
+                label_visibility="collapsed"
+            )
+            if genre == "Show Top 10 Rows":
+                with col1:
+                    st.dataframe(df.head(10))
+            elif genre == "Show Bottom 10 Rows":
+                with col1:
+                    st.dataframe(df.tail(10))
+            else:
+                with col1:
+                    st.dataframe(df.sample(10))
 
 
 
