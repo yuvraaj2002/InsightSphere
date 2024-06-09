@@ -10,7 +10,7 @@ st.markdown(
     """
         <style>
                .block-container {
-                    padding-top: 2rem;
+                    padding-top: 0.8rem;
                     padding-bottom: 0rem;
                     # padding-left: 2rem;
                     # padding-right:2rem;
@@ -197,7 +197,7 @@ def performance_analysis():
     with description_col:
         with st.container(border=True):
             st.markdown(
-                "<p style='font-size: 19px; text-align: left;background-color:#fbe0b4;padding:1rem;'>Explore clustering algorithms—K-Means, DBSCAN, and AGNES—by selecting one from the dropdown menu and clicking Visualize to see how each partitions the data. This interactive exploration reveals unique cluster structures formed by each algorithm, providing valuable insights into their behaviors.</p>",
+                "<p style='font-size: 19px; text-align: left;background-color:#C3E8FF;padding:1rem;'>Explore clustering algorithms—K-Means, DBSCAN, and AGNES—by selecting one from the dropdown menu and clicking Visualize to see how each partitions the data. This interactive exploration reveals unique cluster structures formed by each algorithm, providing valuable insights into their behaviors.</p>",
                 unsafe_allow_html=True,
             )
             st.write("***")
