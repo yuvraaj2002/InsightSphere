@@ -139,77 +139,103 @@ def Finding_answers(df):
         "<p style='font-size: 20px; text-align: left;'>In clustering algorithms like K-means, determining the number of clusters beforehand is crucial, unlike in density or hierarchical clustering methods. To address this, we employ two techniques: the Elbow Method and the Silhouette Method.The Elbow Method is a graphical approach where we plot the within-cluster sum of squares (WCSS) against the number of clusters. The point where the rate of decrease sharply changes represents a suitable value for k.On the other hand, the Silhouette Method calculates the silhouette score for each data point, measuring how similar it is to its own cluster compared to other clusters. This method provides a concise graphical representation of how well each data point lies within its cluster.</p>",
         unsafe_allow_html=True,
     )
+    st.write("***")
 
-    col1, col2 = st.columns(spec=(1,1), gap="large")
+
+    # Create columns layout
+    col1, col2 = st.columns(spec=(1, 1), gap="large")
+
+    # Question 1: Is there a significant difference in the likelihood of being ever married between males and females?
     with col1:
-        # Question 1: Is there a significant difference in the likelihood of being ever married between males and females?
-        with st.expander(
-                "Question 1: Is there a significant difference in the likelihood of being ever married between males and females?",expanded=True):
-            fig = px.bar(df, x='Gender', y='Ever_Married', color='Gender', title='Ever Married by Gender',
-                         labels={'Ever_Married': 'Ever Married Status'})
-            st.plotly_chart(fig)
+        st.markdown(
+            "<p style='font-size:17px; background-color: #FBE0B4; padding: 0.5rem'><strong>Question 1:</strong> Is there a significant difference in the likelihood of being ever married between males and females?</p>",
+            unsafe_allow_html=True)
+        fig1 = px.bar(df, x='Gender', y='Ever_Married', color='Gender', title='Ever Married by Gender',
+                      labels={'Ever_Married': 'Ever Married Status'})
+        st.plotly_chart(fig1)
 
-        # Question 2: How does the age distribution differ between males and females?
-        with st.expander("Question 2: How does the age distribution differ between males and females?",expanded=True):
-            fig = px.histogram(df, x='Age', color='Gender', title='Age Distribution by Gender',
-                               labels={'Age': 'Age', 'count': 'Frequency'})
-            st.plotly_chart(fig)
+    # Question 2: How does the age distribution differ between males and females?
+    with col1:
+        st.markdown(
+            "<p style='font-size:17px; background-color: #FBE0B4; padding: 0.5rem'><strong>Question 2:</strong> How does the age distribution differ between males and females?</p>",
+            unsafe_allow_html=True)
+        fig2 = px.histogram(df, x='Age', color='Gender', title='Age Distribution by Gender',
+                            labels={'Age': 'Age', 'count': 'Frequency'})
+        st.plotly_chart(fig2)
 
-        # Question 3: Are certain professions more likely to have individuals who are graduated compared to others?
-        with st.expander(
-                "Question 3: Are certain professions more likely to have individuals who are graduated compared to others?",expanded=True):
-            fig = px.bar(df, x='Profession', y='Graduated', color='Profession', title='Graduation Status by Profession',
-                         labels={'Graduated': 'Graduated Status'})
-            st.plotly_chart(fig)
+    # Question 3: Are certain professions more likely to have individuals who are graduated compared to others?
+    with col1:
+        st.markdown(
+            "<p style='font-size:17px; background-color: #FBE0B4; padding: 0.5rem'><strong>Question 3:</strong> Are certain professions more likely to have individuals who are graduated compared to others?</p>",
+            unsafe_allow_html=True)
+        fig3 = px.bar(df, x='Profession', y='Ever_Married', color='Profession', title='Ever Married by Profession',
+                      labels={'Ever_Married': 'Ever Married Status'})
+        st.plotly_chart(fig3)
 
-        # Question 4: Is there a typical progression of work experience with age, and does it vary across genders?
-        with st.expander(
-                "Question 4: Is there a typical progression of work experience with age, and does it vary across genders?",expanded=True):
-            fig = px.scatter(df, x='Age', y='Work_Experience', color='Gender', title='Work Experience by Age',
-                             labels={'Age': 'Age', 'Work_Experience': 'Work Experience'})
-            st.plotly_chart(fig)
+    # Question 4: Is there a typical progression of work experience with age, and does it vary across genders?
+    with col1:
+        st.markdown(
+            "<p style='font-size:17px; background-color: #FBE0B4; padding: 0.5rem'><strong>Question 4:</strong> Is there a typical progression of work experience with age, and does it vary across genders?</p>",
+            unsafe_allow_html=True)
+        fig4 = px.scatter(df, x='Age', y='Work_Experience', color='Gender', title='Work Experience by Age',
+                          labels={'Age': 'Age', 'Work_Experience': 'Work Experience'})
+        st.plotly_chart(fig4)
 
-        # Question 5: Do males and females have different spending scores on average?
-        with st.expander("Question 5: Do males and females have different spending scores on average?",expanded=True):
-            fig = px.box(df, x='Gender', y='Spending_Score', color='Gender', title='Spending Score by Gender',
-                         labels={'Spending_Score': 'Spending Score'})
-            st.plotly_chart(fig)
+    # Question 5: Do males and females have different spending scores on average?
+    with col1:
+        st.markdown(
+            "<p style='font-size:17px; background-color: #FBE0B4; padding: 0.5rem'><strong>Question 5:</strong> Do males and females have different spending scores on average?</p>",
+            unsafe_allow_html=True)
+        fig5 = px.box(df, x='Gender', y='Spending_Score', color='Gender', title='Spending Score by Gender',
+                      labels={'Spending_Score': 'Spending Score'})
+        st.plotly_chart(fig5)
+
+    # Question 6: Is there a difference in family size between individuals who are ever married and those who are not?
+    with col2:
+        st.markdown(
+            "<p style='font-size:17px; background-color: #FBE0B4; padding: 0.5rem'><strong>Question 6:</strong> Is there a difference in family size between individuals who are ever married and those who are not?</p>",
+            unsafe_allow_html=True)
+        fig6 = px.box(df, x='Ever_Married', y='Family_Size', color='Ever_Married',
+                      title='Family Size by Ever Married Status',
+                      labels={'Family_Size': 'Family Size'})
+        st.plotly_chart(fig6)
+
+    # Question 7: Which profession tends to have more or less work experience on average?
+    with col2:
+        st.markdown(
+            "<p style='font-size:17px; background-color: #FBE0B4; padding: 0.5rem'><strong>Question 7:</strong> Which profession tends to have more or less work experience on average?</p>",
+            unsafe_allow_html=True)
+        fig7 = px.bar(df, x='Profession', y='Work_Experience', color='Profession',
+                      title='Work Experience by Profession',
+                      labels={'Work_Experience': 'Work Experience'})
+        st.plotly_chart(fig7)
+
+    # Question 8: Is there any correlation between age and spending score?
+    with col2:
+        st.markdown(
+            "<p style='font-size:17px; background-color: #FBE0B4; padding: 0.5rem'><strong>Question 8:</strong> Is there any correlation between age and spending score?</p>",
+            unsafe_allow_html=True)
+        fig8 = px.scatter(df, x='Age', y='Spending_Score', trendline='ols',
+                          title='Correlation between Age and Spending Score',
+                          labels={'Age': 'Age', 'Spending_Score': 'Spending Score'})
+        st.plotly_chart(fig8)
+
+    # Question 9: Are certain professions more likely to have individuals who are graduated compared to others?
+    with col2:
+        st.markdown(
+            "<p style='font-size:17px; background-color: #FBE0B4; padding: 0.5rem'><strong>Question 9:</strong> Are certain professions more likely to have individuals who are graduated compared to others?</p>",
+            unsafe_allow_html=True)
+        fig9 = px.bar(df, x='Profession', y='Ever_Married', color='Profession', title='Ever Married by Profession',
+                      labels={'Ever_Married': 'Ever Married Status'})
+        st.plotly_chart(fig9)
 
     with col2:
-        # Question 6: Is there a difference in family size between individuals who are ever married and those who are not?
-        with st.expander(
-                "Question 6: Is there a difference in family size between individuals who are ever married and those who are not?",expanded=True):
-            fig = px.box(df, x='Ever_Married', y='Family_Size', color='Ever_Married',
-                         title='Family Size by Ever Married Status',
-                         labels={'Family_Size': 'Family Size'})
-            st.plotly_chart(fig)
-
-        # Question 7: Which profession tends to have more or less work experience on average?
-        with st.expander("Question 7: Which profession tends to have more or less work experience on average?",expanded=True):
-            fig = px.bar(df, x='Profession', y='Work_Experience', color='Profession',
-                         title='Work Experience by Profession',
-                         labels={'Work_Experience': 'Work Experience'})
-            st.plotly_chart(fig)
-
-        # Question 8: Is there any correlation between age and spending score?
-        with st.expander("Question 8: Is there any correlation between age and spending score?",expanded=True):
-            fig = px.scatter(df, x='Age', y='Spending_Score', trendline='ols',
-                             title='Correlation between Age and Spending Score',
-                             labels={'Age': 'Age', 'Spending_Score': 'Spending Score'})
-            st.plotly_chart(fig)
-
-        # Question 9: Are certain professions more likely to have individuals who are graduated compared to others?
-        with st.expander(
-                "Question 9: Are certain professions more likely to have individuals who are graduated compared to others?",expanded=True):
-            fig = px.bar(df, x='Profession', y='Graduated', color='Profession', title='Graduated Status by Profession',
-                         labels={'Graduated': 'Graduated Status'})
-            st.plotly_chart(fig)
-
-        # Question 10: How does the age distribution vary between males and females?
-        with st.expander("Question 10: How does the age distribution vary between males and females?",expanded=True):
-            fig = px.histogram(df, x='Age', color='Gender', title='Age Distribution by Gender',
-                               labels={'Age': 'Age', 'count': 'Frequency'}, marginal='violin')
-            st.plotly_chart(fig)
+        st.markdown(
+            "<p style='font-size:17px; background-color: #FBE0B4; padding: 0.5rem'><strong>Question 10:</strong> How does the age distribution vary between males and females?</p>",
+            unsafe_allow_html=True)
+        fig10 = px.histogram(df, x='Age', color='Gender', title='Age Distribution by Gender',
+                             labels={'Age': 'Age', 'count': 'Frequency'}, marginal='violin')
+        st.plotly_chart(fig10)
 
 
 def cluster_analysis_visualization():
