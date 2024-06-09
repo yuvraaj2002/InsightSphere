@@ -6,8 +6,8 @@ import streamlit as st
 
 # Set page configuration
 st.set_page_config(
-    page_title="FindHome.AI",
-    page_icon="🏠",
+    page_title="InsightSphere",
+    page_icon="🕵️‍♂️",
     layout="wide",
 )
 
@@ -37,22 +37,18 @@ st.markdown(
 
 # Main page function
 def main_page():
-    Overview_col, Img_col = st.columns(spec=(1.2, 1), gap="large")
+    Overview_col, Img_col = st.columns(spec=(1.4, 1), gap="large")
 
     with Overview_col:
 
         # Content for main page
         st.markdown(
-            "<h1 style='text-align: left; font-size: 70px; '>Ingsights Sphere</h1>",
+            "<h1 style='text-align: left; font-size: 65px; '>Ingsights Sphere</h1>",
             unsafe_allow_html=True,
         )
         st.write("")
         st.markdown(
-            "<p style='font-size: 22px; text-align: left;'>Customer segmentation is crucial for businesses aiming to boost marketing efficiency and customer satisfaction. By categorizing customers based on demographics, interests, and purchasing behavior, companies tailor marketing messages to engage each segment effectively.</p>",
-            unsafe_allow_html=True,
-        )
-        st.markdown(
-            "<p style='font-size: 22px; text-align: left;'>Our app employs advanced clustering algorithms like KMeans, DBSCAN, and AGNES to extract insights from your customer data. Whether you're a marketer targeting specific segments or a strategist refining product offerings, our tool facilitates informed decision-making.Our application have 3 modules ⬇️</p>",
+            "<p style='font-size: 22px; text-align: left;'>Customer segmentation is vital for enhancing marketing efficiency and customer satisfaction. By analyzing demographics, interests, and purchasing behavior, businesses can customize marketing strategies for different customer segments. Our app utilizes sophisticated clustering algorithms such as KMeans, DBSCAN, and AGNES to derive valuable insights from your customer data. Whether you're a marketer focusing on specific segments or a strategist refining products, our tool supports informed decision-making. Our application consists of 3 modules⬇️</p>",
             unsafe_allow_html=True,
         )
 
@@ -70,10 +66,7 @@ def main_page():
         )
 
     with Img_col:
-        st.write("")
-        st.markdown("<div class='top-margin'> </div>", unsafe_allow_html=True)
-        st.image("Banner.jpg")
-        st.write("")
+        st.image("artifacts/Home.png")
 
         social_col1, social_col2, social_col3, social_col4 = st.columns(
             spec=(1, 1, 1, 1), gap="large"
