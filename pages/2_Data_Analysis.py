@@ -136,7 +136,7 @@ def plot_pie_charts(df):
 def Finding_answers(df):
     st.title("MultiVariate Analysis")
     st.markdown(
-        "<p style='font-size: 20px; text-align: left;'>In clustering algorithms like K-means, determining the number of clusters beforehand is crucial, unlike in density or hierarchical clustering methods. To address this, we employ two techniques: the Elbow Method and the Silhouette Method.The Elbow Method is a graphical approach where we plot the within-cluster sum of squares (WCSS) against the number of clusters. The point where the rate of decrease sharply changes represents a suitable value for k.On the other hand, the Silhouette Method calculates the silhouette score for each data point, measuring how similar it is to its own cluster compared to other clusters. This method provides a concise graphical representation of how well each data point lies within its cluster.</p>",
+        "<p style='font-size: 20px; text-align: left;'>Multivariate analysis is a statistical technique used to understand the relationships between multiple variables simultaneously. Unlike univariate analysis, which examines a single variable, multivariate analysis considers the interactions and dependencies among several variables. This approach allows for a more comprehensive understanding of complex data sets and can uncover patterns, trends, and correlations that would be missed when analyzing variables in isolation.In our analysis, we will use multivariate techniques to discover the answers to the following ten questions, employing various visualization charts</p>",
         unsafe_allow_html=True,
     )
     st.write("***")
@@ -253,7 +253,7 @@ def cluster_analysis_visualization():
 
 def display_basic_details(df):
     st.markdown(
-        "<p style='font-size: 20px; text-align: left;'>In clustering algorithms like K-means, determining the number of clusters beforehand is crucial, unlike in density or hierarchical clustering methods. To address this, we employ two techniques: the Elbow Method and the Silhouette Method.The Elbow Method is a graphical approach where we plot the within-cluster sum of squares (WCSS) against the number of clusters. The point where the rate of decrease sharply changes represents a suitable value for k.On the other hand, the Silhouette Method calculates the silhouette score for each data point, measuring how similar it is to its own cluster compared to other clusters. This method provides a concise graphical representation of how well each data point lies within its cluster.</p>",
+        "<p style='font-size: 20px; text-align: left;'>This module is specifically designed to provide a comprehensive analysis of the features or variables present in our dataset. As part of this analysis, we will conduct two types of analysis: univariate and multivariate. However, before delving into these analyses, it is essential to review some fundamental information about the dataset. Understanding the dataset's structure, including its dimensions, types of variables, and any preliminary statistics, will lay a solid foundation for the detailed univariate and multivariate analyses that follow. By examining both the individual characteristics of each variable and the intricate relationships between multiple variables, we aim to extract meaningful insights and uncover hidden patterns within the data.</p>",
         unsafe_allow_html=True,
     )
 
@@ -266,7 +266,7 @@ def display_basic_details(df):
             <div style='background-color: #C3E8FF; padding:1rem;'>
                 <ul>
                     <h5> Dimensionality Information </h5>
-                    <li>Total Number of data points in the dataset</li>
+                    <li>There are total 8676 data points in the dataset</li>
                     <li>Total number of features in our dataset</li>
                     <li>There are 4 Nominal features and 1 Ordinal categorical feature</li>
                     <li>There is only single discrete numerical variable</li>
