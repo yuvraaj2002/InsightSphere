@@ -46,8 +46,10 @@ def plot_pie_charts(df):
     )
 
     # Create subplot grid
-    fig = ps.make_subplots(rows=1, cols=5,
-                           specs=[[{'type': 'domain'}, {'type': 'domain'}, {'type': 'domain'}, {'type': 'domain'},{'type': 'domain'}]])
+    fig = ps.make_subplots(
+        rows=1, cols=5,
+        specs=[[{'type': 'domain'}, {'type': 'domain'}, {'type': 'domain'}, {'type': 'domain'}, {'type': 'domain'}]]
+    )
 
     # Plotting pie charts
     fig.add_trace(
@@ -80,15 +82,55 @@ def plot_pie_charts(df):
         row=1, col=5
     )
 
-    # Update layout for elegance
+    # Update layout for elegance and add titles
     fig.update_layout(
-        title='',
+        annotations=[
+            dict(text='Gender distribution', x=0.05, y=1.15, font_size=12, showarrow=False, xanchor='center', yanchor='top'),
+            dict(text='Ever Married distribution', x=0.25, y=1.15, font_size=12, showarrow=False, xanchor='center', yanchor='top'),
+            dict(text='Graduated distribution', x=0.45, y=1.15, font_size=12, showarrow=False, xanchor='center', yanchor='top'),
+            dict(text='Spending Score distribution', x=0.65, y=1.15, font_size=12, showarrow=False, xanchor='center', yanchor='top'),
+            dict(text='Profession distribution', x=0.85, y=1.15, font_size=12, showarrow=False, xanchor='center', yanchor='top')
+        ],
         height=400,
-        width=800,
+        width=1000,
         showlegend=False,
         legend=dict(x=0.05, y=0.95)
     )
+
     st.plotly_chart(fig, use_container_width=True)
+
+    age_val_counts = df['Age'].value_counts().reset_index()
+    age_val_counts.columns = ['Age', 'Count']
+
+    # Create bubble plot
+    fig = px.scatter(age_val_counts, x='Age', y='Count', size='Count',
+                     labels={'Age': 'Age', 'Count': 'Count'},
+                     title='Bubble plot of Age feature',
+                     size_max=50)
+
+    fig.update_layout(yaxis={'categoryorder': 'total ascending'})
+    st.plotly_chart(fig, use_container_width=True)
+
+    # Create column layout
+    bar_col1, bar_col2 = st.columns((1, 1))
+
+    # Plot bar plot for Work_Experience
+    with bar_col1:
+        work_exp_counts = df['Work_Experience'].value_counts().reset_index()
+        work_exp_counts.columns = ['Work_Experience', 'Count']
+        fig5 = px.bar(work_exp_counts, x='Work_Experience', y='Count',
+                      labels={'Work_Experience': 'Work Experience', 'Count': 'Count'},
+                      title='Distribution of Work Experience', width=400)
+        st.plotly_chart(fig5, use_container_width=True)
+
+    # Plot bar plot for Family_Size
+    with bar_col2:
+        family_size_counts = df['Family_Size'].value_counts().reset_index()
+        family_size_counts.columns = ['Family_Size', 'Count']
+        fig7 = px.bar(family_size_counts, x='Family_Size', y='Count',
+                      labels={'Family_Size': 'Family Size', 'Count': 'Count'},
+                      title='Distribution of Family Size', width=400)
+        st.plotly_chart(fig7, use_container_width=True)
 
 
 def Finding_answers(df):
