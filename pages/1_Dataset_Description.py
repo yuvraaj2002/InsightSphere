@@ -44,6 +44,7 @@ def load_reduced_data():
 def load_df():
     try:
         df = pd.read_csv("artifacts/data.csv")
+        df.drop(['Unnamed: 0'],axis=1,inplace=True)
         return df
     except FileNotFoundError:
         print("Error: File not found.")
