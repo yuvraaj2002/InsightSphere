@@ -29,7 +29,7 @@
 Customer segmentation is crucial for businesses aiming to boost marketing efficiency and customer satisfaction. By categorizing customers based on demographics, interests, and purchasing behavior, companies tailor marketing messages to engage each segment effectively. Our app employs advanced clustering algorithms like KMeans, DBSCAN, and AGNES to extract insights from your customer data. Whether you're a marketer targeting specific segments or a strategist refining product offerings, our tool facilitates informed decision-making. Our application consists of three modules: Dataset Overview, allowing you to gain a comprehensive understanding of your customer dataset's structure and variables; Clustering Performance Analysis, enabling you to evaluate the effectiveness of different clustering algorithms and compare performance metrics; and Individual Cluster Summary, where you can dive deep into each segmented cluster to uncover unique traits and behaviors for targeted marketing strategies.
 
 ## Project Youtube Demo Video (Click to watch)
-[![Watch the video](https://img.youtube.com/vi/QWryikv_4UQ/maxresdefault.jpg)](https://youtu.be/QWryikv_4UQ?si=Iv1g6Cqnb5y-IIED)
+[![Watch the video](https://img.youtube.com/vi/QWryikv_4UQ/maxresdefault.jpg)](https://youtu.be/QWryikv_4UQ)
 
 
 
