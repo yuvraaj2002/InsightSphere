@@ -30,7 +30,7 @@ Customer segmentation is crucial for businesses aiming to boost marketing effici
 
 ## Project Youtube Demo Video (Click to watch)
 [![Watch the video](https://img.youtube.com/vi/QWryikv_4UQ/maxresdefault.jpg)](https://youtu.be/QWryikv_4UQ)
-![Live Project Link](https://insightsphere-jopfdkgr3vfrvcsfw8radr.streamlit.app/)
+If you want to interact with the application by yourself then checkout this ➡️ [Live Project Link](https://insightsphere-jopfdkgr3vfrvcsfw8radr.streamlit.app/)
 
 
 
